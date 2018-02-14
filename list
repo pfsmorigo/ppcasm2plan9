@@ -1,0 +1,63 @@
+add A, B, C          | ADD RC, RB, RA
+addi A, B, C         | ADD $C, RB, RA
+and A, B, C          | AND RC, RB, RA
+and. A, B, C         | ANDCC RC, RB, RA
+andc A, B, C         | ANDN RC, RB, RA
+andc. A, B, C        | ANDNCC RC, RB, RA
+andi. A, B, C        | ANDCC $C, RB, RA
+b TARGET             | JMP TARGET
+bdnz TARGET          | BC 0x10, 0, TARGET
+beq TARGET           | BEQ TARGET
+beq- TARGET          | BC 0x0E, 2, TARGET
+bge TARGET           | BGE TARGET
+bgt- TARGET          | BC 0x0E, 1, TARGET
+bl TARGET            | CALL TARGET
+ble TARGET           | BLE TARGET
+blr                  | JMP LR
+blt TARGET           | BLT TARGET
+blt- TARGET          | BC 0x0E, 0, TARGET
+bne- TARGET          | BC 0x06, 2, TARGET
+cmpldi A, B          | CMPU RA, $B
+cmpldi A, B, C       | CMPU RB, $C, CRA
+cmpwi A, B           | CMPU RA, $B
+cmpwi A, B, C        | CMPU RB, $C, CRA
+eqv A, B, C          | EQV RC, RB, RA
+eqv. A, B, C         | EQVCC RC, RB, RA
+li A, B              | MOVD $B, RA
+lvsl A, B, C         | LVSL (RC)(RB), VA
+lvsr A, B, C         | LVSR (RC)(RB), VA
+lvx A, B, C          | LVX (RC)(RB), VA
+lwz A, B(C)          | MOVWZ B(RC), RA
+mfctr A              | MOVD CTR, RA
+mflr A               | MOVD LR, RA
+mr A, B              | MOVD RB, RA
+mtctr A              | MOVD RA, CTR
+mtlr A               | MOVD RA, LR
+nand A, B, C         | NAND RC, RB, RA
+nand. A, B, C        | NANDCC RC, RB, RA
+neg A, B             | NEG RB, RA
+nor A, B, C          | NOR RC, RB, RA
+nor. A, B, C         | NORCC RC, RB, RA
+not A, B             | NOR RB, RB, RA
+not. A, B            | NORCC RB, RB, RA
+or A, B, C           | OR RC, RB, RA
+or. A, B, C          | ORCC RC, RB, RA
+orc A, B, C          | ORN RC, RB, RA
+orc. A, B, C         | ORNCC RC, RB, RA
+slwi A, B, C         | SLW $C, RB, RA
+srwi A, B, C         | SRW $C, RB, RA
+std A, B(C)          | MOVD RA, B(RC)
+stdu A, B(C)         | MOVDU RA, B(RC)
+stvx A, B, C         | STVX VA, (RC+RB)
+stw A, B(C)          | MOVW RA, B(RC)
+subi A, B, C         | SUB $C, RB, RA
+vadduwm A, B, C      | VADDUWM VC, VB, VA
+vcipherlast A, B, C  | VCIPHERLAST VC, VB, VA
+vor A, B, C          | VOR VC, VB, VA
+vperm A, B, C, D     | VPERM VD, VC, VB, VA
+vsel A, B, C, D      | VSEL VD, VC, VB, VA
+vsldoi A, B, C, D    | VSLDOI $D, VC, VB, VA
+vspltisb A, B        | VSPLTISB $B, VA
+vxor A, B, C         | VXOR VC, VB, VA
+xor A, B, C          | XOR RC, RB, RA
+xor. A, B, C         | XORCC RC, RB, RA
